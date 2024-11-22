@@ -1,0 +1,62 @@
+{
+    "name": "daniser/wbeng-suite",
+    "type": "library",
+    "description": "WBEngine type definitions, builders and mappers.",
+    "keywords": ["wbeng", "wbengine", "booking", "web booking engine"],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/daniser/wbeng-suite/issues",
+        "source": "https://github.com/daniser/wbeng-suite"
+    },
+    "authors": [
+        {
+            "name": "Sergey Danilchenko",
+            "email": "s.danilchenko@ttbooking.ru"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "daniser/uniquery": "dev-master",
+        "giggsey/libphonenumber-for-php": "^8.8.1",
+        "odolbeau/phone-number-bundle": "^3.10 || ^4.0",
+        "symfony/intl": "^6.4 || ^7.0",
+        "symfony/polyfill-intl-icu": "^1.21",
+        "symfony/property-access": "^6.4 || ^7.0",
+        "symfony/serializer": "^6.4 || ^7.0",
+        "symfony/validator": "^6.4 || ^7.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.57",
+        "phpstan/phpstan": "^1.10 || ^2.0",
+        "phpunit/phpunit": "^10.0 || ^11.0"
+    },
+    "replace": {
+        "symfony/framework-bundle": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TTBooking\\WBEngine\\": "src/"
+        },
+        "files": [
+            "src/Builders/functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TTBooking\\WBEngine\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": false
+        },
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "analyse": "@php vendor/bin/phpstan analyse",
+        "lint": "@php vendor/bin/php-cs-fixer check",
+        "test": "@php vendor/bin/phpunit"
+    }
+}

@@ -1,0 +1,9 @@
+parameters:
+    paths:
+        - src
+        - tests
+
+    level: max
+
+    ignoreErrors:
+        - '#^Call to method PHPUnit\\Framework\\Assert::assertTrue\(\) with true will always evaluate to true\.$#'
