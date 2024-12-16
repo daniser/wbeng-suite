@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TTBooking\WBEngine\DTO;
 
 use Symfony\Component\Validator\Constraints as Assert;
+use TTBooking\UniQuery\Attributes\Alias;
 use TTBooking\UniQuery\Attributes\Endpoint;
 use TTBooking\UniQuery\Attributes\Method;
 use TTBooking\UniQuery\Attributes\ResultType;
@@ -16,7 +17,7 @@ use TTBooking\WBEngine\DTO\Enums\ServiceClass;
 use TTBooking\WBEngine\DTO\Query\RouteSegment;
 use TTBooking\WBEngine\DTO\Query\Seat;
 
-#[Method('POST'), Endpoint('flights'), ResultType(FlightsResult::class)]
+#[Alias('search'), Method('POST'), Endpoint('flights'), ResultType(FlightsResult::class)]
 class SearchFlights
 {
     use SearchFlightsBuilder;

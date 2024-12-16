@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TTBooking\WBEngine\DTO;
 
 use Symfony\Component\Validator\Constraints as Assert;
+use TTBooking\UniQuery\Attributes\Alias;
 use TTBooking\UniQuery\Attributes\Endpoint;
 use TTBooking\UniQuery\Attributes\Method;
 use TTBooking\UniQuery\Attributes\ResultType;
@@ -12,7 +13,7 @@ use TTBooking\WBEngine\Builders\CreateBooking as CreateBookingBuilder;
 use TTBooking\WBEngine\DTO\Query\FlightGroup;
 use TTBooking\WBEngine\Serializer\Attribute\SerializedPath;
 
-#[Method('POST'), Endpoint('book'), ResultType(BookingResult::class)]
+#[Alias('book'), Method('POST'), Endpoint('book'), ResultType(BookingResult::class)]
 class CreateBooking
 {
     use CreateBookingBuilder;
