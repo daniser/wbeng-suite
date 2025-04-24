@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TTBooking\WBEngine\Builders;
 
 use DateTimeInterface;
-use TTBooking\UniQuery\Buildable;
+use TTBooking\Stateful\Concerns\Buildable;
 use TTBooking\WBEngine\DTO\Common\Carrier;
 use TTBooking\WBEngine\DTO\Common\Country;
 use TTBooking\WBEngine\DTO\Common\Passport;
@@ -13,7 +13,7 @@ use TTBooking\WBEngine\DTO\Enums\DocumentType;
 use TTBooking\WBEngine\DTO\Enums\Gender;
 use TTBooking\WBEngine\DTO\Enums\PassengerType;
 
-use function TTBooking\UniQuery\entity;
+use function TTBooking\Stateful\entity;
 
 /**
  * @method static static token(string $token)

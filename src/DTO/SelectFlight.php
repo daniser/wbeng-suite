@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace TTBooking\WBEngine\DTO;
 
-use TTBooking\UniQuery\Attributes\Alias;
-use TTBooking\UniQuery\Attributes\Endpoint;
-use TTBooking\UniQuery\Attributes\Method;
-use TTBooking\UniQuery\Attributes\ResultType;
+use TTBooking\Stateful\Attributes\Alias;
+use TTBooking\Stateful\Attributes\Endpoint;
+use TTBooking\Stateful\Attributes\Method;
+use TTBooking\Stateful\Attributes\ResultType;
 use TTBooking\WBEngine\Builders\SelectFlight as SelectFlightBuilder;
 use TTBooking\WBEngine\DTO\Query\CorporateID;
 use TTBooking\WBEngine\DTO\Query\FlightGroup;

@@ -6,6 +6,7 @@ namespace TTBooking\WBEngine\Builders;
 
 use DateTimeImmutable;
 use DateTimeInterface;
+use TTBooking\WBEngine\DTO\BookingResult;
 use TTBooking\WBEngine\DTO\Common\BenefitCode;
 use TTBooking\WBEngine\DTO\Common\Carrier;
 use TTBooking\WBEngine\DTO\Common\Country;
@@ -16,28 +17,39 @@ use TTBooking\WBEngine\DTO\Common\Passenger;
 use TTBooking\WBEngine\DTO\Common\TourCode;
 use TTBooking\WBEngine\DTO\CreateBooking;
 use TTBooking\WBEngine\DTO\Enums\PassengerType;
+use TTBooking\WBEngine\DTO\FlightsResult;
 use TTBooking\WBEngine\DTO\Query\RouteSegment;
 use TTBooking\WBEngine\DTO\Query\Seat;
 use TTBooking\WBEngine\DTO\SearchFlights;
 use TTBooking\WBEngine\DTO\SelectFlight;
+use TTBooking\WBEngine\Query;
 
-use function TTBooking\UniQuery\entity;
+use function TTBooking\Stateful\entity;
 
 // Query Builders
 
-function fly(): SearchFlights
+/**
+ * @return Query<SearchFlights, FlightsResult>
+ */
+function fly(): Query
 {
-    return entity(SearchFlights::class);
+    return new Query(entity(SearchFlights::class));
 }
 
-function choose(): SelectFlight
+/**
+ * @return Query<SelectFlight, FlightsResult>
+ */
+function choose(): Query
 {
-    return entity(SelectFlight::class);
+    return new Query(entity(SelectFlight::class));
 }
 
-function book(): CreateBooking
+/**
+ * @return Query<CreateBooking, BookingResult>
+ */
+function book(): Query
 {
-    return entity(CreateBooking::class);
+    return new Query(entity(CreateBooking::class));
 }
 
 // Route Segment Builders

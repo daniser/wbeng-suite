@@ -15,12 +15,12 @@ use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
 use Symfony\Component\Serializer\Normalizer\BackedEnumNormalizer;
 use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Normalizer\PropertyNormalizer;
-use Symfony\Component\Serializer\Serializer;
-use TTBooking\UniQuery\SerializerInterface;
+use Symfony\Component\Serializer\Serializer as SymfonySerializer;
+use TTBooking\Stateful\Contracts\Serializer as SerializerContract;
 
 final class SerializerFactory
 {
-    public static function createSerializer(): SerializerInterface
+    public static function createSerializer(): SerializerContract
     {
         $propertyNormalizer = new PropertyNormalizer(
             $classMetadataFactory = new ClassMetadataFactory(new AttributeLoader),
@@ -33,7 +33,7 @@ final class SerializerFactory
         );
 
         return new SerializerWrapper(
-            new Serializer(
+            new SymfonySerializer(
                 [
                     new Normalizer\CaseInsensitiveBackedEnumDenormalizer,
                     new BackedEnumNormalizer,

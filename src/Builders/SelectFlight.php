@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace TTBooking\WBEngine\Builders;
 
-use TTBooking\UniQuery\Buildable;
+use TTBooking\Stateful\Concerns\Buildable;
 use TTBooking\WBEngine\DTO\FlightsResult;
 use TTBooking\WBEngine\DTO\Query\Flight;
 use TTBooking\WBEngine\DTO\Query\FlightGroup;
 use TTBooking\WBEngine\DTO\Query\Itinerary;
 
-use function TTBooking\UniQuery\entity;
+use function TTBooking\Stateful\entity;
 
 /**
  * @method static static fromSearchResult(FlightsResult $result, int $flightGroupId, int $itineraryId, int $flightId)

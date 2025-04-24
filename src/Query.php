@@ -4,8 +4,17 @@ declare(strict_types=1);
 
 namespace TTBooking\WBEngine;
 
-use TTBooking\UniQuery\Query as BaseQuery;
+use TTBooking\Stateful\Contracts;
+use TTBooking\Stateful\Query as BaseQuery;
 
+/**
+ * @template TPayload of object
+ * @template TResult of Contracts\Result
+ *
+ * @extends BaseQuery<TPayload, TResult>
+ *
+ * @mixin TPayload
+ */
 class Query extends BaseQuery
 {
     public function getEndpoint(): string

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace TTBooking\WBEngine\Builders;
 
 use DateTimeInterface;
-use TTBooking\UniQuery\Buildable;
+use TTBooking\Stateful\Concerns\Buildable;
 use TTBooking\WBEngine\DTO\Common\Location;
 
 /**

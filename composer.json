@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "daniser/uniquery": "dev-master",
+        "daniser/stateful": "dev-master",
         "giggsey/libphonenumber-for-php": "^8.8.1",
         "odolbeau/phone-number-bundle": "^3.10 || ^4.0",
         "symfony/intl": "^6.4 || ^7.0",

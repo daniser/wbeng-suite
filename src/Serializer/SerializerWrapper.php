@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace TTBooking\WBEngine\Serializer;
 
 use Symfony\Component\Serializer\SerializerInterface as SymfonySerializerInterface;
-use TTBooking\UniQuery\SerializerInterface;
+use TTBooking\Stateful\Contracts\Serializer;
 
-class SerializerWrapper implements SerializerInterface
+class SerializerWrapper implements Serializer
 {
     public function __construct(protected SymfonySerializerInterface $serializer) {}
 

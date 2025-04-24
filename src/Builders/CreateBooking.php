@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace TTBooking\WBEngine\Builders;
 
-use TTBooking\UniQuery\Buildable;
+use TTBooking\Stateful\Concerns\Buildable;
 use TTBooking\WBEngine\DTO\Common\Carrier;
 use TTBooking\WBEngine\DTO\Common\Code3D;
 use TTBooking\WBEngine\DTO\Common\Passenger;
