@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace TTBooking\WBEngine\Builders;
 
 use TTBooking\Stateful\Concerns\Buildable;
+use TTBooking\Stateful\Contracts\Query;
+use TTBooking\WBEngine\DTO\BookingResult;
 use TTBooking\WBEngine\DTO\Common\Carrier;
 use TTBooking\WBEngine\DTO\Common\Code3D;
 use TTBooking\WBEngine\DTO\Common\Passenger;
@@ -15,6 +17,8 @@ use TTBooking\WBEngine\DTO\Common\Passenger;
  * @method static static tourCode(string $code, Carrier|string $carrier)
  * @method static static benefitCode(string $code, Carrier|string $carrier)
  * @method static static code3D(string $code)
+ *
+ * @mixin Query<$this, BookingResult>
  */
 trait CreateBooking
 {

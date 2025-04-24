@@ -12,8 +12,6 @@ use TTBooking\Stateful\Query as BaseQuery;
  * @template TResult of Contracts\Result
  *
  * @extends BaseQuery<TPayload, TResult>
- *
- * @mixin TPayload
  */
 class Query extends BaseQuery
 {

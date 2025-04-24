@@ -29,7 +29,7 @@ use function TTBooking\Stateful\entity;
 // Query Builders
 
 /**
- * @return Query<SearchFlights, FlightsResult>
+ * @return Query<SearchFlights, FlightsResult>&SearchFlights
  */
 function fly(): Query
 {
@@ -37,7 +37,7 @@ function fly(): Query
 }
 
 /**
- * @return Query<SelectFlight, FlightsResult>
+ * @return Query<SelectFlight, FlightsResult>&SelectFlight
  */
 function choose(): Query
 {
@@ -45,7 +45,7 @@ function choose(): Query
 }
 
 /**
- * @return Query<CreateBooking, BookingResult>
+ * @return Query<CreateBooking, BookingResult>&CreateBooking
  */
 function book(): Query
 {

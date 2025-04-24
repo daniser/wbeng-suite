@@ -6,11 +6,13 @@ namespace TTBooking\WBEngine\Builders;
 
 use DateTimeInterface;
 use TTBooking\Stateful\Concerns\Buildable;
+use TTBooking\Stateful\Contracts\Query;
 use TTBooking\WBEngine\DTO\Common\Carrier;
 use TTBooking\WBEngine\DTO\Common\Location;
 use TTBooking\WBEngine\DTO\Enums\FlightSorting;
 use TTBooking\WBEngine\DTO\Enums\PassengerType;
 use TTBooking\WBEngine\DTO\Enums\ServiceClass;
+use TTBooking\WBEngine\DTO\FlightsResult;
 use TTBooking\WBEngine\DTO\Query\RouteSegment;
 use TTBooking\WBEngine\DTO\Query\Seat;
 
@@ -30,6 +32,8 @@ use TTBooking\WBEngine\DTO\Query\Seat;
  * @method static static sortByPrice()
  * @method static static sortByDuration()
  * @method static static limit(int $to)
+ *
+ * @mixin Query<$this, FlightsResult>
  */
 trait SearchFlights
 {

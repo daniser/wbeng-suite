@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace TTBooking\WBEngine\Builders;
 
 use TTBooking\Stateful\Concerns\Buildable;
+use TTBooking\Stateful\Contracts\Query;
 use TTBooking\WBEngine\DTO\FlightsResult;
 use TTBooking\WBEngine\DTO\Query\Flight;
 use TTBooking\WBEngine\DTO\Query\FlightGroup;
@@ -17,6 +18,8 @@ use function TTBooking\Stateful\entity;
  * @method static static fromSearch(string $token)
  * @method static static flightGroup(string $token)
  * @method static static flight(string $token)
+ *
+ * @mixin Query<$this, FlightsResult>
  */
 trait SelectFlight
 {
