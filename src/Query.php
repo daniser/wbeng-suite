@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace TTBooking\WBEngine;
 
-use TTBooking\Stateful\Contracts;
+use TTBooking\Stateful\Contracts\QueryPayload;
 use TTBooking\Stateful\Query as BaseQuery;
 
 /**
- * @template TPayload of object
- * @template TResult of Contracts\Result
+ * @template TQueryPayload of QueryPayload
  *
- * @extends BaseQuery<TPayload, TResult>
+ * @extends BaseQuery<TQueryPayload>
  */
 class Query extends BaseQuery
 {

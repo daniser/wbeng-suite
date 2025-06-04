@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace TTBooking\WBEngine\DTO;
 
+use TTBooking\Stateful\Contracts\ResultPayload;
 use TTBooking\WBEngine\DTO\Result\Context;
 use TTBooking\WBEngine\DTO\Result\FlightGroup;
 use TTBooking\WBEngine\DTO\Result\Message;
 use TTBooking\WBEngine\Serializer\Attribute\SerializedPath;
 
-class FlightsResult
+class FlightsResult implements ResultPayload
 {
     public string $token;
 

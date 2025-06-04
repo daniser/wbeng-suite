@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace TTBooking\WBEngine\DTO;
 
 use Symfony\Component\Validator\Constraints as Assert;
-use TTBooking\Stateful\Attributes\Alias;
 use TTBooking\Stateful\Attributes\Endpoint;
 use TTBooking\Stateful\Attributes\Method;
-use TTBooking\Stateful\Attributes\ResultType;
+use TTBooking\Stateful\Concerns\Attributes;
+use TTBooking\Stateful\Contracts\QueryPayload;
 use TTBooking\WBEngine\Builders\SearchFlights as SearchFlightsBuilder;
 use TTBooking\WBEngine\DTO\Common\Carrier;
 use TTBooking\WBEngine\DTO\Common\Code3D;
@@ -17,10 +17,14 @@ use TTBooking\WBEngine\DTO\Enums\ServiceClass;
 use TTBooking\WBEngine\DTO\Query\RouteSegment;
 use TTBooking\WBEngine\DTO\Query\Seat;
 
-#[Alias('search'), Method('POST'), Endpoint('flights'), ResultType(FlightsResult::class)]
-class SearchFlights
+/**
+ * @implements QueryPayload<"search", FlightsResult>
+ */
+#[Method('POST'), Endpoint('flights')]
+class SearchFlights implements QueryPayload
 {
-    use SearchFlightsBuilder;
+    /** @use Attributes<"search", FlightsResult> */
+    use Attributes, SearchFlightsBuilder;
 
     public function __construct(
         /** @var list<RouteSegment> */

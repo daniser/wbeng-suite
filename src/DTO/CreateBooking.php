@@ -5,18 +5,22 @@ declare(strict_types=1);
 namespace TTBooking\WBEngine\DTO;
 
 use Symfony\Component\Validator\Constraints as Assert;
-use TTBooking\Stateful\Attributes\Alias;
 use TTBooking\Stateful\Attributes\Endpoint;
 use TTBooking\Stateful\Attributes\Method;
-use TTBooking\Stateful\Attributes\ResultType;
+use TTBooking\Stateful\Concerns\Attributes;
+use TTBooking\Stateful\Contracts\QueryPayload;
 use TTBooking\WBEngine\Builders\CreateBooking as CreateBookingBuilder;
 use TTBooking\WBEngine\DTO\Query\FlightGroup;
 use TTBooking\WBEngine\Serializer\Attribute\SerializedPath;
 
-#[Alias('book'), Method('POST'), Endpoint('book'), ResultType(BookingResult::class)]
-class CreateBooking
+/**
+ * @implements QueryPayload<"book", BookingResult>
+ */
+#[Method('POST'), Endpoint('book')]
+class CreateBooking implements QueryPayload
 {
-    use CreateBookingBuilder;
+    /** @use Attributes<"book", BookingResult> */
+    use Attributes, CreateBookingBuilder;
 
     public function __construct(
         public string $token,

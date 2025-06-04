@@ -6,7 +6,6 @@ namespace TTBooking\WBEngine\Builders;
 
 use DateTimeImmutable;
 use DateTimeInterface;
-use TTBooking\WBEngine\DTO\BookingResult;
 use TTBooking\WBEngine\DTO\Common\BenefitCode;
 use TTBooking\WBEngine\DTO\Common\Carrier;
 use TTBooking\WBEngine\DTO\Common\Country;
@@ -17,7 +16,6 @@ use TTBooking\WBEngine\DTO\Common\Passenger;
 use TTBooking\WBEngine\DTO\Common\TourCode;
 use TTBooking\WBEngine\DTO\CreateBooking;
 use TTBooking\WBEngine\DTO\Enums\PassengerType;
-use TTBooking\WBEngine\DTO\FlightsResult;
 use TTBooking\WBEngine\DTO\Query\RouteSegment;
 use TTBooking\WBEngine\DTO\Query\Seat;
 use TTBooking\WBEngine\DTO\SearchFlights;
@@ -29,7 +27,7 @@ use function TTBooking\Stateful\entity;
 // Query Builders
 
 /**
- * @return Query<SearchFlights, FlightsResult>&SearchFlights
+ * @return Query<SearchFlights>
  */
 function fly(): Query
 {
@@ -37,7 +35,7 @@ function fly(): Query
 }
 
 /**
- * @return Query<SelectFlight, FlightsResult>&SelectFlight
+ * @return Query<SelectFlight>
  */
 function choose(): Query
 {
@@ -45,7 +43,7 @@ function choose(): Query
 }
 
 /**
- * @return Query<CreateBooking, BookingResult>&CreateBooking
+ * @return Query<CreateBooking>
  */
 function book(): Query
 {
