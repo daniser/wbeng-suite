@@ -309,7 +309,7 @@ trait Passenger
     {
         $this->email = null;
         $this->isEmailRefused = $refused;
-        $this->isEmailAbsent = !$refused;
+        $this->isEmailAbsent = ! $refused;
 
         return $this;
     }
