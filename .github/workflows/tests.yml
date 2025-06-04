@@ -30,12 +30,11 @@ jobs:
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
       - name: Execute lint tests
-        run: vendor/bin/php-cs-fixer check
-        if: matrix.php != '8.4'
+        run: vendor/bin/pint --test
 
       - name: Execute static analysis
         run: vendor/bin/phpstan
         if: matrix.php == '8.2'
 
       - name: Execute unit/feature tests
-        run: vendor/bin/phpunit
+        run: vendor/bin/pest
