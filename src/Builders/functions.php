@@ -27,25 +27,25 @@ use function TTBooking\Stateful\entity;
 // Query Builders
 
 /**
- * @return Query<SearchFlights>
+ * @return Query<SearchFlights>|SearchFlights
  */
-function fly(): Query
+function fly(): Query|SearchFlights // @phpstan-ignore return.unusedType
 {
     return new Query(entity(SearchFlights::class));
 }
 
 /**
- * @return Query<SelectFlight>
+ * @return Query<SelectFlight>|SelectFlight
  */
-function choose(): Query
+function choose(): Query|SelectFlight // @phpstan-ignore return.unusedType
 {
     return new Query(entity(SelectFlight::class));
 }
 
 /**
- * @return Query<CreateBooking>
+ * @return Query<CreateBooking>|CreateBooking
  */
-function book(): Query
+function book(): Query|CreateBooking // @phpstan-ignore return.unusedType
 {
     return new Query(entity(CreateBooking::class));
 }

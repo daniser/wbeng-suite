@@ -50,6 +50,13 @@
             "TTBooking\\WBEngine\\Tests\\": "tests/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TTBooking\\WBEngine\\WBEngineServiceProvider"
+            ]
+        }
+    },
     "config": {
         "allow-plugins": {
             "pestphp/pest-plugin": true,
