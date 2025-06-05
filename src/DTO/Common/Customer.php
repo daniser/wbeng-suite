@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace TTBooking\WBEngine\DTO\Common;
 
-use Misd\PhoneNumberBundle\Validator\Constraints\PhoneNumber as AssertPhoneNumber;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class Customer
@@ -15,7 +14,6 @@ class Customer
         #[Assert\Email]
         public string $email,
 
-        #[AssertPhoneNumber]
         public string $phone,
     ) {}
 }

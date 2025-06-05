@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace TTBooking\WBEngine\DTO\Common;
 
-use Misd\PhoneNumberBundle\Validator\Constraints\PhoneNumber as AssertPhoneNumber;
 use Symfony\Component\Validator\Constraints as Assert;
 use TTBooking\WBEngine\Builders;
 use TTBooking\WBEngine\DTO\Enums\PassengerType;
@@ -22,7 +21,6 @@ class Passenger
 
         public PassengerType $type,
 
-        #[AssertPhoneNumber]
         public string $phone,
 
         #[Assert\Email]
