@@ -7,7 +7,9 @@ namespace TTBooking\WBEngine;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
+use TTBooking\Stateful\SerializerManager;
 use TTBooking\Stateful\ServiceManager;
+use TTBooking\WBEngine\Serializer\SerializerFactory;
 
 class WBEngineServiceProvider extends ServiceProvider implements DeferrableProvider
 {
@@ -26,6 +28,10 @@ class WBEngineServiceProvider extends ServiceProvider implements DeferrableProvi
                     $container,
                 );
             });
+        });
+
+        $this->callAfterResolving('stateful-serializer', static function (SerializerManager $manager) {
+            $manager->extend('wbeng', SerializerFactory::createSerializer(...));
         });
 
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'wbeng-suite');
