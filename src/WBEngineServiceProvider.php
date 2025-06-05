@@ -31,7 +31,7 @@ class WBEngineServiceProvider extends ServiceProvider implements DeferrableProvi
         });
 
         $this->callAfterResolving('stateful-serializer', static function (SerializerManager $manager) {
-            $manager->extend('wbeng', SerializerFactory::createSerializer(...));
+            $manager->extend('wbeng', fn () => SerializerFactory::createSerializer());
         });
 
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'wbeng-suite');
