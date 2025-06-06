@@ -106,7 +106,7 @@ final class PersonPhoneNormalizer implements NormalizerInterface, DenormalizerIn
     }
 
     /**
-     * @return array{int, null|int, string, string}
+     * @return array{int|PhoneNumberType, null|int, string, string}
      */
     private static function parsePhone(string $phone, ?string $defaultRegion = null): array
     {

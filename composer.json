@@ -17,7 +17,7 @@
     "require": {
         "php": "^8.2",
         "daniser/stateful": "dev-master",
-        "giggsey/libphonenumber-for-php": "^8.8.1",
+        "giggsey/libphonenumber-for-php": "^8.8.1 || ^9.0",
         "symfony/intl": "^7.2",
         "symfony/polyfill-intl-icu": "^1.21",
         "symfony/property-access": "^7.2",
