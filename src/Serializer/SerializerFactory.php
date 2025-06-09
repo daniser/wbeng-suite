@@ -17,7 +17,6 @@ use Symfony\Component\Serializer\Normalizer\DateTimeNormalizer;
 use Symfony\Component\Serializer\Normalizer\PropertyNormalizer;
 use Symfony\Component\Serializer\Serializer as SymfonySerializer;
 use TTBooking\Stateful\Contracts\Serializer as SerializerContract;
-use TTBooking\Stateful\SerializerWrapper;
 
 final class SerializerFactory
 {
