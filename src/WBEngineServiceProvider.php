@@ -44,6 +44,6 @@ class WBEngineServiceProvider extends ServiceProvider implements DeferrableProvi
      */
     public function provides(): array
     {
-        return ['stateful'];
+        return ['stateful', 'stateful-serializer'];
     }
 }
