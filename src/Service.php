@@ -41,7 +41,7 @@ class Service extends BaseService
      */
     public function newBookQuery(Request $request): Query
     {
-        /** @var Query<SelectFlight> */
+        /** @var Query<CreateBooking> */
         return book();
     }
 }
