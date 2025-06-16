@@ -27,4 +27,15 @@ class Query extends BaseQuery
     {
         return parent::getHeaders() + ['Content-Type' => 'application/json'];
     }
+
+    /**
+     * @return array{context: array<string, mixed>, parameters: QueryPayload}
+     */
+    public function getBody(): array
+    {
+        return [
+            'context' => $this->getContext(),
+            'parameters' => $this->getPayload(),
+        ];
+    }
 }
