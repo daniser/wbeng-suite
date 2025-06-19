@@ -20,7 +20,7 @@ class WBEngineServiceProvider extends ServiceProvider implements DeferrableProvi
     {
         $this->callAfterResolving('stateful', static function (ServiceManager $manager) {
             $manager->extend('wbeng', function (Container $container, array $config, string $name) {
-                return $this->cloneContainer($config, $name)->make(Service::class);
+                return $this->cloneContainer($config, $name)->make(Service::class, compact('name'));
             });
         });
 
